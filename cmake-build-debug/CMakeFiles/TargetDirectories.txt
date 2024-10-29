@@ -1,3 +1,0 @@
-C:/study/SomethingFun/LearnOpenGL/cmake-build-debug/CMakeFiles/LearnOpenGL.dir
-C:/study/SomethingFun/LearnOpenGL/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/study/SomethingFun/LearnOpenGL/cmake-build-debug/CMakeFiles/rebuild_cache.dir

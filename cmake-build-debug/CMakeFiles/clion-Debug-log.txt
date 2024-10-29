@@ -1,4 +1,0 @@
-"C:\Users\fengl\AppData\Local\JetBrains\CLion 2023.3.4\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Users/fengl/AppData/Local/JetBrains/CLion 2023.3.4/bin/ninja/win/x64/ninja.exe" -G Ninja -S C:\study\SomethingFun\LearnOpenGL -B C:\study\SomethingFun\LearnOpenGL\cmake-build-debug
--- Configuring done (0.1s)
--- Generating done (0.0s)
--- Build files have been written to: C:/study/SomethingFun/LearnOpenGL/cmake-build-debug
