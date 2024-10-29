@@ -162,7 +162,11 @@ int main() {
 
     /*正确释放/删除之前的分配的所有资源*/
     //------------------------
-    glfwTerminate();
+    glDeleteVertexArrays(1, &VAO);
+    glDeleteBuffers(1, &VBO);
+    glDeleteBuffers(1, &EBO);
+    glDeleteProgram(shaderProgram);
 
+    glfwTerminate();
     return 0;
 }
