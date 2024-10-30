@@ -89,6 +89,8 @@ int main() {
 
         //draw
         ourShader.use();
+        float time=sin(glfwGetTime());
+        ourShader.setFloat("offset",time);
 
         //
         glBindVertexArray(VAO);
