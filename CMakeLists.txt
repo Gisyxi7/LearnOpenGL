@@ -8,6 +8,8 @@ link_directories(${PROJECT_SOURCE_DIR}/lib)
 
 add_executable(LearnOpenGL main.cpp src/glad.c
         include/shader.h
+        include/stb_image.h
+        src/stb_image.cpp
 )
 
 target_link_libraries(LearnOpenGL ${PROJECT_SOURCE_DIR}/lib/glfw3.dll)
