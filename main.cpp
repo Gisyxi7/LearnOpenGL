@@ -47,7 +47,7 @@ int main() {
 
     /*着色器*/
     //------------------------
-    Shader ourShader("../shader/shader.vs","../shader/shader.fs");
+    Shader ourShader("../shader/shader_v.vert","../shader/shader_f.frag");
 
     //
     float vertices[] = {
