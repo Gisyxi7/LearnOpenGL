@@ -6,6 +6,8 @@
 #include <iostream>
 #include <cmath>
 
+float v = 0;
+
 void framebuffer_size_callback(GLFWwindow *window, int width, int height) {
     glViewport(0, 0, width, height);
 }
@@ -13,6 +15,10 @@ void framebuffer_size_callback(GLFWwindow *window, int width, int height) {
 void processInput(GLFWwindow *window) {
     if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
         glfwSetWindowShouldClose(window, true);
+    if (glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS)
+        v = (v + 0.01 > 1) ? 1 : (v + 0.01);
+    if (glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS)
+        v = (v - 0.01 < 0) ? 0 : (v - 0.01);
 }
 
 const unsigned int SCR_WIDTH = 800;
@@ -147,6 +153,7 @@ int main() {
 
         //draw
         ourShader.use();
+        ourShader.setFloat("v",v);
 
         //
         glBindVertexArray(VAO);
