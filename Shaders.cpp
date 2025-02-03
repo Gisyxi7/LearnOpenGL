@@ -1,12 +1,5 @@
-#include <glad/glad.h>
-#include <GLFW/glfw3.h>
-#include <shader/shader.h>
+#include <common.h>
 
-#include <iostream>
-#include <valarray>
-
-// 窗口尺寸变化时的回调函数
-void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 // 处理用户输入的函数
 void processInput(GLFWwindow *window);
 
@@ -16,36 +9,9 @@ const unsigned int SCR_HEIGHT = 600;
 
 int main()
 {
-    // glfw: 初始化并配置
-    // ------------------------------
-    glfwInit();  // 初始化 GLFW 库
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);  // 设置 OpenGL 主要版本为 3
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);  // 设置 OpenGL 次版本为 3
-    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);  // 设置 OpenGL 使用核心模式
-
-#ifdef __APPLE__
-    glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE); // macOS 系统需要设置兼容性
-#endif
-
     // 创建窗口
-    // --------------------
-    GLFWwindow* window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "LearnOpenGL", NULL, NULL);
-    if (window == NULL)
-    {
-        std::cout << "Failed to create GLFW window" << std::endl;
-        glfwTerminate();  // 创建失败时终止 GLFW
-        return -1;
-    }
-    glfwMakeContextCurrent(window);  // 创建当前窗口的 OpenGL 上下文
-    glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);  // 注册窗口大小变化的回调函数
-
-    // glad: 加载所有 OpenGL 函数指针
-    // ---------------------------------------
-    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
-    {
-        std::cout << "Failed to initialize GLAD" << std::endl;
-        return -1;
-    }
+    // ------------------------------------
+    GLFWwindow* window = init(SCR_WIDTH, SCR_HEIGHT, "LearnOpenGL");
 
     // 编译和构建着色器程序
     // ------------------------------------
@@ -122,10 +88,4 @@ void processInput(GLFWwindow *window)
 {
     if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
         glfwSetWindowShouldClose(window, true);
-}
-
-// 窗口大小改变时的回调函数
-void framebuffer_size_callback(GLFWwindow* window, int width, int height)
-{
-    glViewport(0, 0, width, height);  // 更新视口大小
 }
