@@ -43,6 +43,8 @@ GLFWwindow* init(const int SCR_WIDTH, const int SCR_HEIGHT, const char* title){
         return nullptr;
     }
 
+    glEnable(GL_DEPTH_TEST);
+
     return window;
 }
 
